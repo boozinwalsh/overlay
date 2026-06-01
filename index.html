@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stream Overlay Master</title>
+    <style>
+        /* Base 1080p Canvas */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1920px;
+            height: 1080px;
+            background-color: transparent;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Generic iFrame reset */
+        iframe {
+            border: none;
+            position: absolute;
+            background-color: transparent;
+        }
+
+        /* 1. Emote Wall (Full Screen) */
+        .emote-wall {
+            top: 0;
+            left: 0;
+            width: 1920px;
+            height: 1080px;
+            z-index: 1;
+            pointer-events: none; /* Allows clicks to pass through if needed */
+        }
+
+        /* 2. Top Left: Image Slideshow */
+        .slideshow {
+            position: absolute;
+            top: 40px;    /* Adjust to match OBS Y coordinate */
+            left: 40px;   /* Adjust to match OBS X coordinate */
+            width: 300px; /* Adjust to match your image dimensions */
+            height: 100px;
+            z-index: 10;
+        }
+        .slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            animation: crossfade 18s infinite;
+        }
+        /* 6-second intervals for a 3-image cycle */
+        .slideshow img:nth-child(1) { animation-delay: 0s; }
+        .slideshow img:nth-child(2) { animation-delay: 6s; }
+        .slideshow img:nth-child(3) { animation-delay: 12s; }
+
+        @keyframes crossfade {
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            33% { opacity: 1; }
+            38% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* 3. Top Center: Bits Counter */
+        .bits-counter {
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        /* 4. Top Right: Subs Counter */
+        .subs-counter {
+            top: 40px;
+            right: 40px;
+            width: 300px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        /* 5. Center: Alert Box */
+        .alert-box {
+            top: 240px;
+            left: 560px; /* Centered horizontally (1920-800)/2 */
+            width: 800px;
+            height: 600px;
+            z-index: 50; /* Highest z-index so alerts are never blocked */
+        }
+
+        /* 6. Bottom Left: Tip Jar */
+        .tip-jar {
+            bottom: 40px;
+            left: 40px;
+            width: 400px;
+            height: 400px;
+            z-index: 10;
+        }
+
+        /* 7. Bottom Center: Streamer Songlist */
+        .songlist {
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 150px;
+            z-index: 10;
+        }
+
+        /* 8. Bottom Right: Donation Goal */
+        .donation-goal {
+            bottom: 40px;
+            right: 40px;
+            width: 500px;
+            height: 150px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Emote Wall -->
+    <iframe class="emote-wall" src="https://streamlabs.com/widgets/emote-wall?token=A4EA3B61BD741E1F6A38" allowtransparency="true"></iframe>
+
+    <!-- 2. Slideshow: Place these 3 image files in the same folder as this HTML file -->
+    <div class="slideshow">
+        <img src="orcamind.png" alt="@orcamind">
+        <img src="michelle.png" alt="@michelleheafy">
+        <img src="josiah.png" alt="@josiaheverhart">
+    </div>
+
+    <!-- 3. Bits Counter -->
+    <iframe class="bits-counter" src="YOUR_BITS_GOAL_URL" allowtransparency="true"></iframe>
+
+    <!-- 4. Subs Counter -->
+    <iframe class="subs-counter" src="YOUR_SUBS_GOAL_URL" allowtransparency="true"></iframe>
+
+    <!-- 5. Alert Box -->
+    <iframe class="alert-box" src="https://streamlabs.com/alert-box/v3/A4EA3B61BD741E1F6A38" allowtransparency="true"></iframe>
+
+    <!-- 6. Tip Jar -->
+    <iframe class="tip-jar" src="https://streamlabs.com/widgets/tip-jar/v1/A4EA3B61BD741E1F6A38" allowtransparency="true"></iframe>
+
+    <!-- 7. Streamer Songlist -->
+    <iframe class="songlist" src="https://boozinwalsh.github.io/songtitles/" allowtransparency="true"></iframe>
+
+    <!-- 8. Donation Goal -->
+    <iframe class="donation-goal" src="https://streamlabs.com/widgets/donation-goal?token=A4EA3B61BD741E1F6A38" allowtransparency="true"></iframe>
+
+</body>
+</html>
