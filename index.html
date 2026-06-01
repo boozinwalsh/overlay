@@ -23,23 +23,15 @@
             background-color: transparent;
         }
 
-        /* 1. Emote Wall (Full Screen) */
-        .emote-wall {
-            top: 0;
-            left: 0;
-            width: 1920px;
-            height: 1080px;
-            z-index: 1;
-            pointer-events: none; /* Allows clicks to pass through if needed */
-        }
+        
 
         /* 2. Top Left: Image Slideshow */
         .slideshow {
             position: absolute;
             top: 40px;    /* Adjust to match OBS Y coordinate */
             left: 40px;   /* Adjust to match OBS X coordinate */
-            width: 300px; /* Adjust to match your image dimensions */
-            height: 100px;
+            width: 470px; /* Adjust to match your image dimensions */
+            height: 80px;
             z-index: 10;
         }
         .slideshow img {
@@ -92,14 +84,6 @@
             z-index: 50; /* Highest z-index so alerts are never blocked */
         }
 
-        /* 6. Bottom Left: Tip Jar */
-        .tip-jar {
-            bottom: 40px;
-            left: 40px;
-            width: 400px;
-            height: 400px;
-            z-index: 10;
-        }
 
         /* 7. Bottom Center: Streamer Songlist */
         .songlist {
@@ -134,10 +118,10 @@
     </div>
 
     <!-- 3. Bits Counter -->
-    <iframe class="bits-counter" src="YOUR_BITS_GOAL_URL" allowtransparency="true"></iframe>
+    <iframe class="bits-counter" src="https://streamlabs.com/widgets/bit-goal?token=A4EA3B61BD741E1F6A38" allowtransparency="true"></iframe>
 
     <!-- 4. Subs Counter -->
-    <iframe class="subs-counter" src="YOUR_SUBS_GOAL_URL" allowtransparency="true"></iframe>
+    <iframe class="subs-counter" src="https://streamlabs.com/widgets/sub-goal?token=A4EA3B61BD741E1F6A38" allowtransparency="true"></iframe>
 
     <!-- 5. Alert Box -->
     <iframe class="alert-box" src="https://streamlabs.com/alert-box/v3/A4EA3B61BD741E1F6A38" allowtransparency="true"></iframe>
