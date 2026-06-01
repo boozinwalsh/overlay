@@ -26,8 +26,8 @@
         /* 1. Top Left: Image Slideshow */
         .slideshow {
             position: absolute;
-            top: 40px;    
-            left: 40px;   
+            top: 30px;    /* Reduced to close the 48px top gap */
+            left: 30px;   /* Reduced to close the 48px left gap */
             width: 470px; 
             height: 80px;
             z-index: 10;
@@ -56,27 +56,27 @@
 
         /* 2. Top Center: Bits Counter */
         .bits-counter {
-            top: 40px;
+            top: 30px;   /* Reduced to close the 48px top gap */
             left: 50%;
             transform: translateX(-50%);
-            width: 405px; /* Increased 35% */
+            width: 405px; 
             height: 80px;
             z-index: 10;
         }
 
         /* 3. Top Right: Subs Counter */
         .subs-counter {
-            top: 40px;
-            right: 40px;
-            width: 405px; /* Increased 35% */
+            top: 30px;    /* Reduced to close the 48px top gap */
+            right: 22px;  /* Pushed out to close the 58px right gap */
+            width: 405px; 
             height: 80px;
             z-index: 10;
         }
 
         /* 4. Bottom Left: Alert Box */
         .alert-box {
-            bottom: 40px; /* Moved to former Tip Jar position */
-            left: 40px; 
+            bottom: 30px; /* Reduced to match the top boundary */
+            left: 30px;   /* Reduced to close the 48px left gap */
             width: 800px;
             height: 600px;
             z-index: 50; 
@@ -84,7 +84,7 @@
 
         /* 5. Bottom Center: Streamer Songlist */
         .songlist {
-            bottom: 40px;
+            bottom: 30px; /* Reduced to match the top boundary */
             left: 50%;
             transform: translateX(-50%);
             width: 600px;
@@ -94,8 +94,8 @@
 
         /* 6. Bottom Right: Donation Goal */
         .donation-goal {
-            bottom: 40px;
-            right: 40px;
+            bottom: 30px;  /* Reduced to match the top boundary */
+            right: 22px;   /* Pushed out to close the 58px right gap */
             width: 500px;
             height: 150px;
             z-index: 10;
