@@ -26,8 +26,8 @@
         /* 1. Top Left: Image Slideshow */
         .slideshow {
             position: absolute;
-            top: 30px;    /* Reduced to close the 48px top gap */
-            left: 30px;   /* Reduced to close the 48px left gap */
+            top: 30px;    
+            left: 30px;   
             width: 470px; 
             height: 80px;
             z-index: 10;
@@ -56,7 +56,7 @@
 
         /* 2. Top Center: Bits Counter */
         .bits-counter {
-            top: 30px;   /* Reduced to close the 48px top gap */
+            top: 30px;   
             left: 50%;
             transform: translateX(-50%);
             width: 405px; 
@@ -66,8 +66,8 @@
 
         /* 3. Top Right: Subs Counter */
         .subs-counter {
-            top: 30px;    /* Reduced to close the 48px top gap */
-            right: 22px;  /* Pushed out to close the 58px right gap */
+            top: 30px;    
+            right: 15px;  /* Reduced to 70% of 22px */
             width: 405px; 
             height: 80px;
             z-index: 10;
@@ -75,16 +75,18 @@
 
         /* 4. Bottom Left: Alert Box */
         .alert-box {
-            bottom: 30px; /* Reduced to match the top boundary */
-            left: 30px;   /* Reduced to close the 48px left gap */
+            bottom: 15px; /* Tucked diagonally into the corner */
+            left: 15px;   
             width: 800px;
             height: 600px;
+            transform: scale(0.5); /* Shrinks the entire widget cleanly by 50% */
+            transform-origin: bottom left; /* Anchors the shrink to the corner */
             z-index: 50; 
         }
 
         /* 5. Bottom Center: Streamer Songlist */
         .songlist {
-            bottom: 30px; /* Reduced to match the top boundary */
+            bottom: 15px; /* Reduced to 50% of 30px */
             left: 50%;
             transform: translateX(-50%);
             width: 600px;
@@ -94,8 +96,8 @@
 
         /* 6. Bottom Right: Donation Goal */
         .donation-goal {
-            bottom: 30px;  /* Reduced to match the top boundary */
-            right: 22px;   /* Pushed out to close the 58px right gap */
+            bottom: 15px;  /* Reduced to 50% of 30px */
+            right: 15px;   /* Reduced to 70% of 22px */
             width: 500px;
             height: 150px;
             z-index: 10;
