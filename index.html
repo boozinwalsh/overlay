@@ -26,7 +26,7 @@
         /* 1. Top Left: Image Slideshow */
         .slideshow {
             position: absolute;
-            top: 30px;    
+            top: 10px;    /* Moved up 20px */
             left: 30px;   
             width: 470px; 
             height: 80px;
@@ -56,7 +56,7 @@
 
         /* 2. Top Center: Bits Counter */
         .bits-counter {
-            top: 30px;   
+            top: 10px;   /* Moved up 20px */
             left: 50%;
             transform: translateX(-50%);
             width: 405px; 
@@ -66,8 +66,8 @@
 
         /* 3. Top Right: Subs Counter */
         .subs-counter {
-            top: 30px;    
-            right: 15px;  /* Reduced to 70% of 22px */
+            top: 10px;    /* Moved up 20px */
+            right: -1px;  /* Moved right 16px */
             width: 405px; 
             height: 80px;
             z-index: 10;
@@ -75,18 +75,18 @@
 
         /* 4. Bottom Left: Alert Box */
         .alert-box {
-            bottom: 15px; /* Tucked diagonally into the corner */
-            left: 15px;   
+            bottom: 15px; 
+            left: 168px;  /* Brought in 153px from the left */
             width: 800px;
             height: 600px;
-            transform: scale(0.5); /* Shrinks the entire widget cleanly by 50% */
-            transform-origin: bottom left; /* Anchors the shrink to the corner */
+            transform: scale(0.625); /* Scaled to 125% of the previous 0.5 size */
+            transform-origin: bottom left; 
             z-index: 50; 
         }
 
         /* 5. Bottom Center: Streamer Songlist */
         .songlist {
-            bottom: 15px; /* Reduced to 50% of 30px */
+            bottom: -12px; /* Moved down 27px */
             left: 50%;
             transform: translateX(-50%);
             width: 600px;
@@ -96,10 +96,11 @@
 
         /* 6. Bottom Right: Donation Goal */
         .donation-goal {
-            bottom: 15px;  /* Reduced to 50% of 30px */
-            right: 15px;   /* Reduced to 70% of 22px */
+            bottom: -56px; /* Moved down 71px */
+            right: -1px;   /* Moved right 16px */
             width: 500px;
             height: 150px;
+            clip-path: inset(0px 0px 26px 0px); /* Crops exactly 26 pixels off the bottom edge */
             z-index: 10;
         }
     </style>
